@@ -11,3 +11,28 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum RequestStatus {
+  OPEN
+  IN_PROGRESS
+  COMPLETED
+}
+
+model ServiceRequest {
+  id          Int           @id @default(autoincrement())
+  title       String        @db.VarChar(200)
+  description String
+  category    String        @db.VarChar(100)
+  priority    Priority
+  status      RequestStatus @default(OPEN)
+  createdAt   DateTime      @default(now()) @map("created_at") @db.Timestamptz(3)
+  updatedAt   DateTime      @updatedAt @map("updated_at") @db.Timestamptz(3)
+
+  @@map("service_requests")
+}
