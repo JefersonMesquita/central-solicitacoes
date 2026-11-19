@@ -1,4 +1,3 @@
-// services/update-request-status.service.ts
 import prisma from "../lib/prisma.js";
 import type { RequestStatus } from "../../generated/prisma/enums.js";
 

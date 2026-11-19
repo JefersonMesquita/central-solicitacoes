@@ -1,4 +1,3 @@
-// controllers/update-request-status.controller.ts
 import type { Request, Response } from "express";
 import idParamsSchema from "../schemas/id-params.schema.js";
 import updateStatusSchema from "../schemas/update-request-status.schema.js";
