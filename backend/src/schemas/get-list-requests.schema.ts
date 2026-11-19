@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Priority, RequestStatus } from "../../generated/prisma/enums";
+import { Priority, RequestStatus } from "../../generated/prisma/enums.js";
 
 const queryParams = z.object({
   status: z.enum(RequestStatus, "Status inválido").optional(),

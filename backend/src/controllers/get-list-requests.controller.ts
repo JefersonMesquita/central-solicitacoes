@@ -1,4 +1,3 @@
-// controllers/get-list-requests.controller.ts
 import type { Request, Response } from "express";
 import queryParams from "../schemas/get-list-requests.schema.js";
 import getListRequestsService from "../services/get-list-requests.service.js";
