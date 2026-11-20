@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { Priority } from "../../generated/prisma/enums";
+import { Priority } from "../../generated/prisma/enums.js";
 
 const requestSchema = z.object({
   title: z

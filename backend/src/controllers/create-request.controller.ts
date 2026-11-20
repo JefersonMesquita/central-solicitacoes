@@ -1,4 +1,3 @@
-// controllers/create-request.controller.ts
 import type { Request, Response } from "express";
 import requestSchema from "../schemas/create-request.schema.js";
 import createRequestService from "../services/create-request.service.js";

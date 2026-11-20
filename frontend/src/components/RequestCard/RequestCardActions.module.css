@@ -1,0 +1,62 @@
+:root {
+  /* Open (Azulado) */
+  --color-status-open-bg: rgba(59, 130, 246, 0.3);
+  --color-status-open-border: rgba(96, 165, 250, 0.4);
+
+  /* In Progress (Alaranjado) */
+  --color-status-progress-bg: rgba(249, 115, 22, 0.3);
+  --color-status-progress-border: rgba(251, 146, 60, 0.4);
+
+  /* Concluded (Cinza base enviado) */
+  --color-status-concluded-bg: rgba(157, 154, 172, 0.3);
+  --color-status-concluded-border: rgba(157, 154, 172, 0.4);
+
+  --color-text-primary: rgba(255, 255, 255, 0.8);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.statusButton {
+  width: 100%;
+}
+
+.statusButton,
+.statusButton-open,
+.statusButton-progress,
+.statusButton-concluded {
+  font-weight: bold;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  border-radius: 50px;
+  border: none;
+  height: 36px;
+}
+
+.statusButton-open {
+  background-color: var(--color-status-open-bg);
+  border: solid 1px var(--color-status-open-border);
+}
+
+.statusButton-progress {
+  background-color: var(--color-status-progress-bg);
+  border: solid 1px var(--color-status-progress-border);
+}
+
+.statusButton-concluded {
+  background-color: var(--color-status-concluded-bg);
+  border: solid 1px var(--color-status-concluded-border);
+  color: rgba(255, 255, 255, 0.2);
+  cursor: default;
+}
+
+.active {
+  cursor: pointer;
+}
+
+svg {
+  color: var(--color-text-primary);
+}

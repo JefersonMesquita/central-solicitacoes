@@ -1,0 +1,25 @@
+.searchContainer {
+  position: relative;
+  max-width: 500px;
+  width: 100%;
+}
+
+.searchbar {
+  height: 40px;
+  width: 100%;
+
+  border: none;
+  padding: 8px 16px;
+  border-radius: 24px;
+  background-color: rgb(255, 255, 255, 0.7);
+}
+
+.searchButton {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 6px;
+  translate: 0 -45%;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}

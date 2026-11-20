@@ -1,4 +1,3 @@
-// services/get-request-by-id.service.ts
 import prisma from "../lib/prisma.js";
 
 const getRequestByIdService = (id: number) =>

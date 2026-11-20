@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.filter {
+  padding: 12px 32px;
+  background-color: rgb(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 24px;
+  width: fit-content;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+}
+
+.filterIcon {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  transition: 0.2s ease-in-out;
+  border: none;
+  padding: 8px;
+  border-radius: 32px;
+  background-color: rgb(255, 255, 255, 0.7);
+  color: black;
+  cursor: pointer;
+}
+
+.forms {
+  font-weight: 400;
+  background-color: rgb(255, 255, 255, 0.7);
+  backdrop-filter: blur(2px);
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 48px;
+  z-index: 10;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    visibility 0s linear 0.3s;
+}
+
+.division {
+  display: flex;
+  flex-direction: column;
+  min-width: 146px;
+}
+
+.container:has(.filter:hover, .filterIcon:hover, .forms:hover) .forms {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+input {
+  cursor: pointer;
+}
+
+.filter:hover,
+.filterIcon:hover {
+  scale: 1.05;
+}
+
+.options {
+  display: inline-block;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  margin-bottom: 4px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.forms {
+  label {
+    transition: 0.2s ease-in-out;
+  }
+  label:hover {
+    scale: 1.05;
+  }
+}
+
+.filterButton {
+  background-color: rgb(0, 179, 179);
+  color: white;
+  padding: 8px;
+  font-size: 16px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.filterButton:hover {
+  scale: 1.05;
+}
+
+@media (max-width: 814px) {
+  .filterIcon {
+    display: flex;
+  }
+
+  .filter {
+    display: none;
+  }
+}
+
+@media (max-width: 814px) {
+  .filterIcon {
+    display: flex;
+  }
+
+  .filter {
+    display: none;
+  }
+
+  .forms {
+    left: 0;
+    right: auto;
+    width: max-content;
+    max-width: calc(100vw - 2px);
+    box-sizing: border-box;
+  }
+}
