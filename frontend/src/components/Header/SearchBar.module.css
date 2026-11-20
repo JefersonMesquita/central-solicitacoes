@@ -18,11 +18,31 @@
 
 .searchButton {
   position: absolute;
-  top: 50%;
+  top: 20px;
   right: 6px;
   translate: 0 -45%;
 
   border: none;
   background-color: transparent;
   cursor: pointer;
+}
+
+.searchInfo {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--color-surface-overlay);
+}
+
+.clearButton {
+  background-color: var(--color-surface-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-small);
+  gap: 8px;
+  padding: 4px 8px;
+  border: none;
 }
