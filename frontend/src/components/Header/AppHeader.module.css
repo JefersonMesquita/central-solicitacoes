@@ -6,15 +6,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: red; */
+  gap: var(--spacing-small);
 
   padding: clamp(24px, 6vw, 100px) clamp(16px, 6vw, 48px);
-  gap: 10px;
 }
 
-/* .aux {
+.aux {
+  flex: 2 1 0;
   width: 100%;
-  flex: 1 1;
   max-width: 200px;
-  flex-grow: 2;
-} */
+}
