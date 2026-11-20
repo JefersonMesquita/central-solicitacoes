@@ -6,19 +6,19 @@ Aplicação web full stack para registrar solicitações internas e acompanhar s
 
 |                         Tela inicial                         |                             Criação                             |                       Filtros e busca                        |
 | :----------------------------------------------------------: | :-------------------------------------------------------------: | :----------------------------------------------------------: |
-| <img src="readme-assets/01-botao-adicionar.jpg" width="260"> | <img src="readme-assets/02-formulario-criacao.jpg" width="260"> | <img src="readme-assets/03-filtros-e-busca.jpg" width="260"> |
+| <img src="readme-assets/01-botao-adicionar.jpg" width="400"> | <img src="readme-assets/02-formulario-criacao.jpg" width="400"> | <img src="readme-assets/03-filtros-e-busca.jpg" width="400"> |
 
 |                       Ações do card                        |                       Edição                        |
 | :--------------------------------------------------------: | :-------------------------------------------------: |
-| <img src="readme-assets/04-acoes-do-card.jpg" width="260"> | <img src="readme-assets/05-edicao.jpg" width="260"> |
+| <img src="readme-assets/04-acoes-do-card.jpg" width="400"> | <img src="readme-assets/05-edicao.jpg" width="400"> |
 
 Na primeira execução não há solicitações cadastradas. O botão **+** no canto inferior direito abre o formulário de criação. Na parte inferior de cada card é possível avançar o status, abrir os detalhes (onde a solicitação é editada) e excluí-la.
 
 ## Tecnologias
 
-**Back-end:** Node.js, TypeScript, Express, Zod (validação), Prisma 7 (ORM) e PostgreSQL 18.
-**Front-end:** React, TypeScript e Vite.
-**Infraestrutura:** Docker Compose (apenas o banco de dados).
+- **Back-end:** Node.js, TypeScript, Express, Zod (validação), Prisma 7 (ORM) e PostgreSQL 18.
+- **Front-end:** React, TypeScript e Vite.
+- **Infraestrutura:** Docker Compose (apenas o banco de dados).
 
 ## Funcionalidades
 
@@ -95,14 +95,14 @@ Para encerrar o banco, use `docker compose down`. **Não** use a opção `-v`, p
 
 Prefixo: `/api`
 
-| Método | Rota           | Descrição                                                                                                      |
-| ------ | -------------- | -------------------------------------------------------------------------------------------------------------- |
-| POST   | `/request`     | Cria uma solicitação                                                                                           |
-| GET    | `/request`     | Lista, com filtros `status` e `priority`, ordenação `order` e busca (⚠️ confirme o nome do parâmetro de busca) |
-| GET    | `/request/:id` | Consulta uma solicitação                                                                                       |
-| PUT    | `/request/:id` | Edita título, descrição, categoria e prioridade                                                                |
-| PATCH  | `/request/:id` | Altera o status, respeitando o fluxo                                                                           |
-| DELETE | `/request/:id` | Exclui uma solicitação                                                                                         |
+| Método | Rota           | Descrição                                                                                                             |
+| ------ | -------------- | --------------------------------------------------------------------------------------------------------------------- |
+| POST   | `/request`     | Cria uma solicitação                                                                                                  |
+| GET    | `/request`     | Lista as solicitações. Sem parâmetros, retorna todas. Aceita `status`, `priority`, `order` e `search` (busca textual) |
+| GET    | `/request/:id` | Consulta uma solicitação                                                                                              |
+| PUT    | `/request/:id` | Edita título, descrição, categoria e prioridade                                                                       |
+| PATCH  | `/request/:id` | Altera o status, respeitando o fluxo                                                                                  |
+| DELETE | `/request/:id` | Exclui uma solicitação                                                                                                |
 
 Valores aceitos: `priority` em `LOW`, `MEDIUM` ou `HIGH`; `status` em `OPEN`, `IN_PROGRESS` ou `COMPLETED`; `order` em `asc` ou `desc`.
 
@@ -185,4 +185,6 @@ central-solicitacoes/
 
 ## Uso de inteligência artificial
 
-Utilizei o Claude (Anthropic) como ferramenta de apoio durante o desenvolvimento: para esclarecer dúvidas técnicas, revisar código e gerar trechos de implementação, que foram revisados, adaptados e testados por mim. Também o utilizei para redigir este README. Consigo explicar e justificar o funcionamento e as decisões do projeto.
+Durante o desenvolvimento, utilizei o Claude (Anthropic) e o ChatGPT (OpenAI) como ferramentas de apoio para esclarecer dúvidas técnicas, revisar código e gerar trechos de implementação, que foram revisados, adaptados e testados por mim. Também contei com o auxílio dessas ferramentas na elaboração deste README.
+
+Sou capaz de explicar e justificar o funcionamento do projeto e as decisões técnicas adotadas.
