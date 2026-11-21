@@ -142,6 +142,17 @@ PostgreSQL 18, gerenciado pelo Prisma. O schema fica em `backend/prisma/schema.p
 
 A regra de transição de status é aplicada pela API (camada de serviço), e não por uma constraint do banco.
 
+### Enums
+
+| Enum            | Valor no banco | Exibido na interface |
+| --------------- | -------------- | -------------------- |
+| `Priority`      | `LOW`          | Baixa                |
+|                 | `MEDIUM`       | Média                |
+|                 | `HIGH`         | Alta                 |
+| `RequestStatus` | `OPEN`         | Em aberto            |
+|                 | `IN_PROGRESS`  | Em andamento         |
+|                 | `COMPLETED`    | Concluído            |
+
 ### Persistência
 
 Os dados ficam em um volume nomeado do Docker (`requestflow_postgres_data`), então sobrevivem a `docker compose down`. Só o `docker compose down -v` os apaga.
@@ -178,10 +189,10 @@ central-solicitacoes/
 
 ## Decisões e limitações
 
-- **PostgreSQL com Docker** em vez de SQLite, por aproximar o ambiente de um cenário real e facilitar a evolução do projeto. O custo é exigir Docker.
-- **Sem autenticação** não implementado (o icone de usuário no canto superior direito não faz nada).
-- **Sem testes automatizados.** A verificação foi manual, com requisições à API e uso da interface.
-- **Sem paginação** na listagem.
+- **PostgreSQL:** escolhido em vez de SQLite por oferecer um ambiente mais próximo de cenários reais de desenvolvimento e produção.
+- **Autenticação:** não implementada nesta versão.
+- **Testes automatizados:** não implementados. As verificações foram realizadas manualmente, por meio de requisições à API e utilização da interface.
+- **Paginação:** não implementada na listagem.
 
 ## Uso de inteligência artificial
 
