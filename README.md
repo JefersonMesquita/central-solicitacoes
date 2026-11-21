@@ -104,6 +104,27 @@ Prefixo: `/api`
 | PATCH  | `/request/:id` | Altera o status, respeitando o fluxo                                                                                  |
 | DELETE | `/request/:id` | Exclui uma solicitação                                                                                                |
 
+### Corpo das requisições
+
+**Criar (`POST /request`) e editar (`PUT /request/:id`):** enviam os mesmos quatro campos.
+
+```json
+{
+  "title": "Problema ao acessar o sistema",
+  "description": "Não consigo fazer login com minhas credenciais.",
+  "category": "Acesso",
+  "priority": "HIGH"
+}
+```
+
+`id`, `status`, `created_at` e `updated_at` são preenchidos automaticamente. O status inicial é sempre `OPEN`, definido pela API. Campos não definidos nos respectivos schemas são descartados durante a validação.
+
+**Alterar o status (`PATCH /request/:id`):** envia só o status desejado.
+
+```json
+{ "status": "IN_PROGRESS" }
+```
+
 Valores aceitos: `priority` em `LOW`, `MEDIUM` ou `HIGH`; `status` em `OPEN`, `IN_PROGRESS` ou `COMPLETED`; `order` em `asc` ou `desc`.
 
 **Fluxo de status:** o cliente envia o status desejado (`{ "status": "IN_PROGRESS" }`), e a API só aceita o próximo da sequência. Saltos, retrocessos e repetições retornam `409`. O status não pode ser alterado pela edição (PUT).
